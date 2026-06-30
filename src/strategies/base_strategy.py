@@ -4,7 +4,7 @@ class BaseStrategy:
     """
     Sets up a format for all future trading strategies to follow so they all have the same structure.
     """
-    def init(self, name="Base Strategy"):
+    def __init__(self, name="Base Strategy"):
         """
         Naming the strategy.
         """
