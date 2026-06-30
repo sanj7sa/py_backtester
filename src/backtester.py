@@ -87,9 +87,15 @@ if __name__ == "__main__":
     if aapl_data is not None:
 
         ma_strategy = MovingAverageCrossStrategy(short_window=50, long_window=200)
+        mean_reversion_strategy = BollingerMeanReversionStrategy(window=20, num_std_dev=2)
         
         backtester = Backtester(data=aapl_data, strategy=ma_strategy, initial_capital=10000)
+        backtester2 = Backtester(data=aapl_data, strategy=mean_reversion_strategy, initial_capital=10000)
         
         backtester.run()
         backtester.evaluate()
         backtester.plot()
+
+        backtester2.run()
+        backtester2.evaluate()
+        backtester2.plot()
